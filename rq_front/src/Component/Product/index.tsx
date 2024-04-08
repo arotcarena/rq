@@ -9,7 +9,7 @@ import { Filters } from "./Filters";
 
 export const Product = () => {
 
-    const {filters, setFilterValue} = useFilters({
+    const {filters, setFilterValue, countFilters, resetFilters} = useFilters({
         itemsPerPage: 20,
         page: 1,
         designation: '',
@@ -29,16 +29,26 @@ export const Product = () => {
         <div>
             <h1>Products</h1>
 
+            {
+                countFilters > 0 && (
+                    <button onClick={resetFilters}>Delete filters ({countFilters})</button>
+                )
+            }
+
             <Filters filters={filters} setFilterValue={setFilterValue} />
             <ProductList products={products} isFetching={isFetching} />
             
-            <Pagination 
-                setFilterValue={setFilterValue}
-                itemsPerPage={itemsPerPage}
-                count={count}
-                lastPage={lastPage}
-                page={page}
-            />
+            {
+                products && count > 1 && (
+                    <Pagination 
+                        setFilterValue={setFilterValue}
+                        itemsPerPage={itemsPerPage}
+                        count={count}
+                        lastPage={lastPage}
+                        page={page}
+                    />
+                )
+            }
         </div>
     )
 }

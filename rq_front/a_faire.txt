@@ -1,2 +1,2 @@
-- faire marcher requetes q coté api
+- pull auth_front
 

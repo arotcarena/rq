@@ -19,6 +19,9 @@ export const QFilterDelayed = ({
 }: Props) => {
 
     const [q, setQ] = useState<string>(value);
+    useEffect(() => {
+        setQ(value);
+    }, [value]);
     const handleChange = (e: any) => {
         setQ(e.target.value);
     };
