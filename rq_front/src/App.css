@@ -1,0 +1,153 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+
+
+
+.product-list {
+  display: flex;
+  gap: 20px;
+  row-gap: 40px;
+  margin: 40px 0;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  opacity: 1;
+  transition: opacity .3s;
+}
+.product-list.loading {
+  opacity: .5;
+}
+
+.product-card {
+  width: 150px;
+}
+.product-card img {
+  width: 150px;
+  height: 150px;
+}
+.product-card h3 {
+  margin: 0;
+}
+.product-card h3, .product-card div {
+  margin: 5px 0;
+}
+.product-card div.product-card-footer {
+  margin-top: 15px;
+}
+.product-card div:last-child {
+  font-size: .8em;
+  opacity: .8;
+  word-wrap: break-word;
+}
+
+.pagination {
+  margin: 50px 0 100px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+}
+.pagination-arrows {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.arrow {
+  background-color: rgb(225, 225, 225);
+  padding: 10px;
+  font-size: 1.2em;
+}
+
+
+
+.search-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  margin: 20px 0;
+  align-items: flex-end;
+}
+.search-filters-wrapper {
+  margin-bottom: 70px;
+}
+
+ .search-filters .form-group {
+    width: 25%;
+    flex: none; 
+ }
+
+.form-control {
+  height: 40px;
+  width: 100%;
+  border-radius: 4px;
+  border: solid 1px rgb(225, 225, 225);
+  padding: 0 10px;
+}
+.form-control:focus {
+  outline: solid 3px rgb(68, 202, 255);
+}
+
+select.form-control {
+  height: 50px;
+}
+
+.form-group label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.product-card-footer {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: space-between;
+}
+.product-card-footer button {
+  background-color: #FFF;
+  border: solid 2px rgb(30, 30, 30);
+  border-radius: 4px;
+  height: 40px;
+  padding: 0 15px;
+}
+.product-card-footer button:last-child {
+  background-color: rgb(30, 30, 30);
+  color: #FFF;
+}
