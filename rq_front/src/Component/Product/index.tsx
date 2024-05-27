@@ -36,7 +36,7 @@ export const Product = () => {
             }
 
             <Filters filters={filters} setFilterValue={setFilterValue} />
-            <ProductList products={products} isFetching={isFetching} />
+            <ProductList products={products} isFetching={isFetching} filters={filters} />
             
             {
                 products && count > 1 && (

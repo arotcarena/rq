@@ -4,19 +4,32 @@ import { ProductCard } from "./ProductCard";
 
 type Props = {
     products: ProductType[],
-    isFetching: boolean
+    isFetching: boolean,
+    filters: object
 };
 
 export const ProductList = ({
     products,
-    isFetching = false
+    isFetching = false,
+    filters
 }:Props) => {
 
     const queryClient = useQueryClient();
 
     const {mutate: removeProduct, isSuccess, reset, isPending: isRemoving} = useMutation({
-        mutationFn: async (id: number) => deleteProduct(id),
-        onSuccess: () => {
+        mutationFn: async (id: number) => {
+            deleteProduct(id);
+            return id;
+        },
+        onMutate: (id: number) => {
+            queryClient.setQueryData(['product_index', filters], (result: any) => {
+                return {
+                    ...result,
+                    items: result.items.filter((item: {id: number}) => item.id !== id)
+                }
+            })
+        },
+        onSettled: () => {
             queryClient.invalidateQueries({ queryKey: ['product_index'] });
         }
     });

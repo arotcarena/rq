@@ -7,6 +7,7 @@ export const Navbar = () => {
             <NavLink to={generateUrl('post_index')}>Posts</NavLink>
             <NavLink to={generateUrl('contact')}>Contact</NavLink>
             <NavLink to={generateUrl('product_index')}>Products</NavLink>
+            <NavLink to={generateUrl('email')}>Email</NavLink>
         </nav>
     )
 }
