@@ -1,3 +1,4 @@
+vendor/
 
 ###> symfony/framework-bundle ###
 /rq_api/.env.local
@@ -25,6 +26,9 @@
 ###< symfony/asset-mapper ###
 
 
+/rq_api/src/Config/SiteConfig.php
+
+
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
@@ -40,4 +44,6 @@
 /rq_front/.env.development.local
 /rq_front/.env.test.local
 /rq_front/.env.production.local
+
+
 

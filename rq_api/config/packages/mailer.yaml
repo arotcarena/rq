@@ -1,3 +1,9 @@
 framework:
     mailer:
-        dsn: '%env(MAILER_DSN)%'
+        # dsn: '%env(MAILER_DSN)%'
+        transports:
+            contact: '%env(MAILER_DSN_CONTACT)%'
+            noreply: '%env(MAILER_DSN_NOREPLY)%'
+            admin: '%env(MAILER_DSN_ADMIN)%'
+            noreply_admin: '%env(MAILER_DSN_NOREPLY_ADMIN)%'
+            gmail: '%env(MAILER_DSN_GMAIL)%'
